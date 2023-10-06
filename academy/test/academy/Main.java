@@ -99,7 +99,7 @@ public class Main {
 		FiguraComposta figC1 = new FiguraComposta(list1);
 		System.out.println("area figura figC1 (stalla con bastoncino)");
 		System.out.println(figC1.calcolaArea());  
-		
+		System.out.println("test)");
 		
 	}
 
