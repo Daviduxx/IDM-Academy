@@ -1,0 +1,32 @@
+package com.coffee.idm;
+
+public class CaffeMacchiato extends CaffeDecorator {
+	
+	private boolean macchiato;
+	
+	public CaffeMacchiato(Caffe caffe) {
+		super(caffe);
+		this.macchiato = true;
+	}
+
+	@Override
+	protected double personalizzazione() {
+		return 0.50;
+	}
+
+	@Override
+	protected String descrizione() {
+		return "macchiato";
+	}
+
+	@Override
+	public String toString() {
+		return "CaffeMacchiato [macchiato=" + macchiato + ", getPrezzo()=" + getPrezzo() + ", getDescrizione()="
+				+ getDescrizione() + "]";
+	}
+
+	
+	
+	
+
+}

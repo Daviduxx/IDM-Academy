@@ -5,8 +5,6 @@ public class Rettangolo extends Figura{
 	 double base;
 	 double altezza;
 	
-	
-
 	public Rettangolo(double base, double altezza) {
 		super();
 		this.base = base;
