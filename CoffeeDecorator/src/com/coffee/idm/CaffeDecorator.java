@@ -9,14 +9,14 @@ public abstract class CaffeDecorator extends Caffe {
 	}
 
 	@Override
-	public double getPrezzo() {
+	public final double getPrezzo() {
 		return caffe.getPrezzo() + personalizzazione();
 	}
 	
 	protected abstract double personalizzazione();
 
 	@Override
-	public String getDescrizione() {
+	public final String getDescrizione() {
 		return this.caffe.getDescrizione() + " " + descrizione();
 	}
 	
