@@ -6,6 +6,8 @@ public class Fabbrica { // questa è la abstract factory
 	
 	public Vagone getVagone(char car) throws CustomException {
 		
+		
+		
 		Vagone v = null;
 		
 		switch (car) {

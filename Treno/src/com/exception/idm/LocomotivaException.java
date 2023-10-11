@@ -1,9 +1,10 @@
 package com.exception.idm;
 
-public class LocomotivaException extends Exception{
+public class LocomotivaException extends TrenoException{
 	
-	public LocomotivaException() {
-		super("Il primo vagone deve sempre essere una locomotiva!");
+
+	public LocomotivaException(String message, String sigla) {
+		super(message, sigla);
 	}
 
 }
