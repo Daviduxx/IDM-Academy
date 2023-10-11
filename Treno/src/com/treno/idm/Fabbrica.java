@@ -1,8 +1,10 @@
 package com.treno.idm;
 
+import com.exception.idm.CustomException;
+
 public class Fabbrica { // questa è la abstract factory
 	
-	public Vagone getVagone(char car) throws Exception {
+	public Vagone getVagone(char car) throws CustomException {
 		
 		Vagone v = null;
 		
@@ -20,7 +22,7 @@ public class Fabbrica { // questa è la abstract factory
 			v = CargoFabbrica.getVagone();		// ritorna un vagone cargo
 			break;
 		default:
-			throw new Exception("Questo tipo di vagone non esiste!");
+			throw new CustomException();
 		}
 		return v;
 	}
