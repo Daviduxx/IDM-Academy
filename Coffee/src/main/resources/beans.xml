@@ -12,14 +12,12 @@
     
      default-init-method="init"
     >
+		<bean id="tipoCaffe" class="com.idm.decorator.TipoCaffe" autowire="constructor">
+		<constructor-arg name="tipo" value="moka"></constructor-arg>
+		</bean>
 		
 		<bean id="caffeConcreto" class="com.idm.bean.CaffeConcreto">
 		<property name="descrizione" value="caffe normale"></property>
-		</bean>
-		
-		<bean id="tipoCaffe" class="com.idm.decorator.TipoCaffe">
-		<constructor-arg name="caffe" ref="caffeConcreto"></constructor-arg>
-		<constructor-arg name="tipo" value="moka"></constructor-arg>
 		</bean>
 		
 		<bean id="decaffeinato" class="com.idm.decorator.Caffeina">
@@ -35,6 +33,8 @@
 		<constructor-arg name="caffe" ref="corretto"></constructor-arg>
 		<constructor-arg name="variante" value="AMERICANO"></constructor-arg>
 		</bean>
+		
+
 	
 	
 		

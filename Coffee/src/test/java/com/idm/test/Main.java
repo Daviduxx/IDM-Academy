@@ -16,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) {
 	
-		String ordine = "corretto";
+		String ordine = "tipoCaffe";
 		
 		BeanFactory context = new ClassPathXmlApplicationContext("beans.xml");  
 		//context.registerShutdownHook();
@@ -25,9 +25,9 @@ public class Main {
 		
 		System.out.println(c);
 		
-//		Caffe c1 = (Caffe) context.getBean("tipoCaffe");
-//		
-//		System.out.println(c1);
+		Caffe c1 = (Caffe) context.getBean("decaffeinato");
+		
+		System.out.println(c1);
 //		
 //		Caffe c2 = (Caffe) context.getBean("corretto");
 //		

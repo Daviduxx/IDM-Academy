@@ -1,9 +1,11 @@
 package com.idm.decorator;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.idm.bean.Caffe;
 
 public abstract class CaffeDecorator extends Caffe {
-	
+
 	private Caffe caffe;
 	
 	public CaffeDecorator(Caffe caffe) {
@@ -23,5 +25,7 @@ public abstract class CaffeDecorator extends Caffe {
 	}
 	
 	protected abstract String descrizione();
+	
+	
 
 }
