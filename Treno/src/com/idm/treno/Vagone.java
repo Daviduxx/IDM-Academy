@@ -11,6 +11,11 @@ public abstract class Vagone { // prodotto generico da creare
 		this.lunghezza = lunghezza;
 		this.peso = peso;
 	}
+
+	@Override
+	public String toString() {
+		return "Vagone [posti=" + posti + ", lunghezza=" + lunghezza + ", peso=" + peso + "]";
+	}
 	
 	
 	

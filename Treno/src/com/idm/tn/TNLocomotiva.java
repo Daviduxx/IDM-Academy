@@ -1,4 +1,6 @@
-package com.idm.treno;
+package com.idm.tn;
+
+import com.idm.treno.Locomotiva;
 
 public class TNLocomotiva extends Locomotiva{
 

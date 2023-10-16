@@ -1,5 +1,10 @@
 package com.idm.treno;
 
+import com.idm.tn.TNCargo;
+import com.idm.tn.TNLocomotiva;
+import com.idm.tn.TNPasseggeri;
+import com.idm.tn.TNRistorante;
+
 public class TnVagoneFactory implements VagoneFactory{
 
 	@Override

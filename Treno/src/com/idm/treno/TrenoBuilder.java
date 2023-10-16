@@ -20,7 +20,8 @@ public abstract class TrenoBuilder{
 		if(sigla.charAt(0) != 'H')
 			throw new LocomotivaException("Locomotiva non in testa", sigla);
 		if(sigla.contains("C") && sigla.contains("P")) {
-			throw new VagoniIncompatibili("I vagoni sono incompatibili", sigla, sigla.indexOf('C'), sigla.indexOf('P') );
+			throw new VagoniIncompatibili("I vagoni sono incompatibili: per motivi di sicurezza i vagoni cargo e vagoni passeggeri non possono stare sullo stesso treno.", 
+					sigla, sigla.indexOf('C'), sigla.indexOf('P') );
 		}
 		
 			

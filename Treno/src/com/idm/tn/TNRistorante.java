@@ -1,4 +1,6 @@
-package com.idm.treno;
+package com.idm.tn;
+
+import com.idm.treno.Ristorante;
 
 public class TNRistorante extends Ristorante{
 

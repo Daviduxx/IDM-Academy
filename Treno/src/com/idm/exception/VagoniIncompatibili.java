@@ -11,7 +11,17 @@ public class VagoniIncompatibili extends TrenoException {
 		this.vagone1 = vagone1;
 		this.vagone2 = vagone2;
 	}
-	
-	
+
+
+	public int getVagone1() {
+		return vagone1;
+	}
+
+
+	public int getVagone2() {
+		return vagone2;
+	}
+
+
 
 }
