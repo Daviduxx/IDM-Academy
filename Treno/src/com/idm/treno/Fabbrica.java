@@ -2,7 +2,7 @@ package com.idm.treno;
 
 import com.idm.exception.CustomException;
 
-public class Fabbrica { // questa è la abstract factory
+public class Fabbrica { 
 	
 	public Vagone getVagone(char car) throws CustomException {
 		
