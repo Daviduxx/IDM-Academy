@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+
+   <class name = "com.idm.treno.Treno" table = "TRENO">
+     
+      <id name = "id" type = "int" column = "id">
+         <generator class="increment"/>
+      </id>
+      
+      <property name = "marca" column = "marca" type = "string"/>
+      
+      <list name="vagoni" cascade="all">  
+          <key column="vid"></key>  
+          <index column="type"></index>  
+          <one-to-many class="com.idm.treno.Vagoni"/>  
+          </list>
+      
+   </class>
+   
+   <class name="com.idm.treno.Vagoni" table="VAGONI">  
+          <id name="id">  
+          <generator class="increment"></generator>  
+          </id>  
+          <property name="posti"></property>  
+          <property name="lunghezza"></property>  
+          <property name="peso"></property>  
+          </class>  
+
+</hibernate-mapping>

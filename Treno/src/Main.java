@@ -1,3 +1,11 @@
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
 import com.idm.exception.CustomException;
 import com.idm.exception.IncompatibleException;
 import com.idm.exception.LocomotivaException;
@@ -17,10 +25,10 @@ public class Main {
 			String sigla = "HPPP";
 			VagoneFactory f = new FrVagoneFactory();
 			TrenoBuilder b = new ConcreteBuilder(f);
-			Treno t;
+			Treno t1;
 			try {
-				t = b.costruisciTreno(sigla);
-				System.out.println(t);
+				t1 = b.costruisciTreno(sigla);
+				System.out.println(t1);
 				System.out.println("Treno creato con successo!");
 			} catch(LocomotivaException e) {
 				System.out.println(e.getMessage() + ". Cambiare la signa con H" + e.getSigla());
@@ -42,6 +50,14 @@ public class Main {
 //		
 //		Treno t3 = new Treno("hpprrc");
 //		System.out.println(t3);
+			
+		StandardServiceRegistry ssr=new StandardServiceRegistryBuilder().configure("hibernate.cfg2.xml").build();  
+		Metadata meta=new MetadataSources(ssr).getMetadataBuilder().build();  
+		
+	    SessionFactory factory=meta.getSessionFactoryBuilder().build();  
+	    Session session=factory.openSession();  
+	      
+	    Transaction t=session.beginTransaction();    
 	}
 
 }
