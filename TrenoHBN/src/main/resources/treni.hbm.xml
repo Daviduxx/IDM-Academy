@@ -7,27 +7,21 @@
 
    <class name = "com.idm.treno.Treno" table = "TRENO">
      
-      <id name = "id" type = "int" column = "id">
-         <generator class="increment"/>
+      <id name = "id" column = "id">
+         <generator class="native"/>
       </id>
       
       <property name = "marca" column = "marca" type = "string"/>
+      <property name = "nome" column = "nome" type = "string"/>
+      <property name = "peso" column = "peso" type = "int"/>
       
-      <list name="vagoni" cascade="all">  
+   	  <list name="vagoni" cascade="all">  
           <key column="vid"></key>  
           <index column="type"></index>  
           <one-to-many class="com.idm.treno.Vagone"/>  
-          </list>
+      </list> 
       
    </class>
    
-   <class name="com.idm.treno.Vagone" table="VAGONI">  
-          <id name="id">  
-          <generator class="increment"></generator>  
-          </id>  
-          <property name="posti" column = "posti"></property>  
-          <property name="lunghezza" column = "lunghezza"></property>  
-          <property name="peso" column = "peso"></property>  
-          </class>  
 
 </hibernate-mapping>

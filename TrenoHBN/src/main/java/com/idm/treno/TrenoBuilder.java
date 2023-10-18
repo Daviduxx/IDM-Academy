@@ -1,16 +1,20 @@
 package com.idm.treno;
 
 
+import java.util.List;
+
 import com.idm.exception.ExcessRestaurantException;
 import com.idm.exception.LocomotivaException;
+import com.idm.exception.LongNameException;
 import com.idm.exception.RestaurantException;
+import com.idm.exception.ShortNameException;
 import com.idm.exception.TrenoException;
 import com.idm.exception.VagoniIncompatibili;
 
 public abstract class TrenoBuilder{
 
 	
-	public Treno costruisciTreno(String sigla) throws TrenoException  {
+	public Treno costruisciTreno(String sigla, String nome) throws TrenoException  {
 		
 		// questo è il builder principale. è astratta perché si occupa solamente di implementare 
 		// l'algoritmo generico della costruzione. Tutti i dettagli verranno poi delegati ai builder concreti.
@@ -68,6 +72,19 @@ public abstract class TrenoBuilder{
 			
 		}
 		t.setMarca(impostaMarca());
+		if(nome.length() < 3)
+			throw new ShortNameException("Attenzione, il nome scelto è troppo corto", sigla);
+		if(nome.length() > 20)
+			throw new LongNameException("Attenzione, il nome scelto è troppo corto", sigla);
+		if(nome!=null)
+		t.setNome(nome);
+		
+		int pesoP = 0;
+		List<Vagone> vagoni = t.getVagoni();
+		for ( Vagone v: vagoni) {
+			pesoP += v.getPeso();
+		}
+		t.setPeso(pesoP);
 		return t;
 		}
 	

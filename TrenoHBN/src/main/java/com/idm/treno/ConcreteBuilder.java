@@ -30,7 +30,7 @@ public class ConcreteBuilder extends TrenoBuilder{
 
 	@Override
 	protected String impostaMarca() {
-		return factory.getClass().getSimpleName();
+		return factory.impostaMarca();
 	}
 
 }

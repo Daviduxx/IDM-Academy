@@ -10,4 +10,6 @@ public interface VagoneFactory {
 
 	public Vagone costruisciCargo();
 
+	public String impostaMarca();
+
 }

@@ -27,4 +27,9 @@ public class TnVagoneFactory implements VagoneFactory{
 		return new TNCargo(0,40,600);
 	}
 
+	@Override
+	public String impostaMarca() {
+		return "TreNord";
+	}
+
 }

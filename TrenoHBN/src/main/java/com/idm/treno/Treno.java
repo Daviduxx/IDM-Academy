@@ -3,12 +3,19 @@ package com.idm.treno;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class Treno {
+
+public class Treno implements Bean{
 	
-	private int id;
+	
+	private Long id;
 	private List<Vagone> vagoni = new ArrayList<>();
 	private String marca;
+	private String nome;
+	private int peso;
 	
 	public Treno () {}
 	
@@ -28,12 +35,28 @@ public class Treno {
 		this.vagoni = vagoni;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
 	}
 
 	@Override

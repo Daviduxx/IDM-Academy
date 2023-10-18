@@ -9,8 +9,11 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import com.idm.exception.ExcessRestaurantException;
 import com.idm.exception.LocomotivaException;
+import com.idm.exception.LongNameException;
 import com.idm.exception.RestaurantException;
+import com.idm.exception.ShortNameException;
 import com.idm.exception.VagoniIncompatibili;
+import com.idm.service.TrenoService;
 import com.idm.treno.ConcreteBuilder;
 import com.idm.treno.FrVagoneFactory;
 import com.idm.treno.TnVagoneFactory;
@@ -22,28 +25,22 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-			String sigla = "HPPRPP";
+			String sigla = "HHPPRPPP";
+			String nome = "miOtreno3";
 			VagoneFactory f = new FrVagoneFactory();
 			TrenoBuilder b = new ConcreteBuilder(f);
 			Treno t1;
 			try {
-				t1 = b.costruisciTreno(sigla);
+				t1 = b.costruisciTreno(sigla, nome);
 				System.out.println(t1);
-				System.out.println("Treno creato con successo!");
+				System.out.println("Treno creato con successo!"); 
 				
-//				StandardServiceRegistry ssr=new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();  
-//				Metadata meta=new MetadataSources(ssr).getMetadataBuilder().build();  
-//				
-//			    SessionFactory factory=meta.getSessionFactoryBuilder().build();  
-//			    Session session=factory.openSession();  
-//			      
-//			    Transaction t=session.beginTransaction();    
-//			    
-//			    session.persist(t1);       
-//			        
-//			    t.commit();    
-//			    session.close();    
-//			    System.out.println("success"); 
+				TrenoService tSvc = new TrenoService();
+			//	tSvc.crea(t1);
+			//	tSvc.delete(3L);
+				Treno t2 = tSvc.find(21L);
+			//	tSvc.findAll();
+				
 			} catch(LocomotivaException e) {
 				System.out.println(e.getMessage() + ". Cambiare la signa con H" + e.getSigla());
 			} 
@@ -61,8 +58,14 @@ public class Main {
 				System.out.println("Prova a eliminare il ristorante in posizione " + e.getRistorante1() + 
 				", oppure prova a rimuovere il ristorante in posizione " + e.getRistorante2());
 			}
-			
-			
+			catch (ShortNameException e) {
+				System.out.println(e.getMessage());
+				System.out.println("Se vuoi, puoi chiamare il tuo treno come la sigla impostata: " + e.getSigla());
+			}
+			catch (LongNameException e) {
+				System.out.println(e.getMessage());
+				System.out.println("Se vuoi, puoi chiamare il tuo treno come la sigla impostata: " + e.getSigla());
+			}
 			catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

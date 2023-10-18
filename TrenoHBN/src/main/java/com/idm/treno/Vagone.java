@@ -1,8 +1,13 @@
 package com.idm.treno;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public abstract class Vagone { // prodotto generico da creare
 	
-	private int id;
+	
+	private Long id;
 	private int posti;
 	private int lunghezza;
 	private int peso;
@@ -14,12 +19,12 @@ public abstract class Vagone { // prodotto generico da creare
 	}
 	
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
