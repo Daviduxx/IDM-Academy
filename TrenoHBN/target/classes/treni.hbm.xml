@@ -15,10 +15,11 @@
       <property name = "nome" column = "nome" type = "string"/>
       <property name = "peso" column = "peso" type = "int"/>
       
-   	  <list name="vagoni" cascade="all">  
+   	  <list name="vagoni" cascade="all" lazy="false">  
           <key column="vid"></key>  
           <index column="type"></index>  
-          <one-to-many class="com.idm.treno.Vagone"/>  
+          <one-to-many class="com.idm.treno.Vagone" />  
+          
       </list> 
       
    </class>

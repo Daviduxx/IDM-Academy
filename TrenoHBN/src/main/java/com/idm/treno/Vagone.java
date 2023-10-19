@@ -4,7 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public abstract class Vagone { // prodotto generico da creare
+public class Vagone { // prodotto generico da creare
 	
 	
 	private Long id;
@@ -12,6 +12,12 @@ public abstract class Vagone { // prodotto generico da creare
 	private int lunghezza;
 	private int peso;
 	
+	
+	
+	public Vagone() {
+	}
+
+
 	public Vagone(int posti, int lunghezza, int peso) {
 		this.posti = posti;
 		this.lunghezza = lunghezza;
