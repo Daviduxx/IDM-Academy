@@ -1,4 +1,4 @@
-<%-- esempio di commento --%>
+<% %>-- esempio di commento --%>
 <%@page contentType="text/html; charset=UTF-8" %>
 <HTML>
 <HEAD>
